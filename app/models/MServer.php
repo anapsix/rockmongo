@@ -69,6 +69,9 @@ class MServer {
 				case "mongo_db":
 					$this->_mongoDb = $value;
 					break;
+				case "mongo_authsource":
+					$this->_mongoAuthSource = $value;
+					break;
 				case "mongo_options":
 					$this->_mongoOptions = $value;
 					break;
@@ -164,6 +167,10 @@ class MServer {
 
 	public function mongoDb() {
 		return $this->_mongoDb;
+	}
+
+	public function mongoAuthSource() {
+		return $this->_mongoAuthSource;
 	}
 
 	public function setMongoDb($db) {
@@ -284,7 +291,7 @@ class MServer {
 		return $this->_docsRender;
 	}
 
-	public function auth($username, $password, $db = "admin") {
+	public function auth($username, $password, $db = "admin", $authsource) {
 		if ($db === "") {
 			if (!$this->_mongoAuth && $this->_mongoDb) {
 				$db = $this->_mongoDb;
@@ -293,6 +300,9 @@ class MServer {
 				$db = "admin";
 			}
 		}
+    if ($authsource === "") {
+      $authsource = $db;
+    }
 		$server = null;
 		if ($this->_mongoSock) {//connect through sock
 			$server = $this->_mongoSock;
@@ -309,6 +319,7 @@ class MServer {
 				$options["username"] = $username;
 				$options["password"] = $password;
 				$options["db"] = $db;
+				$options["authsource"] = "admin";
 			}
 
 			//after 1.2.11 use options to authenticate

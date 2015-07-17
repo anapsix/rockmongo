@@ -43,6 +43,14 @@ class MUser {
 		$dbs = $this->dbs();
 		return $dbs[0]; 
 	}
+
+  public function setAuthSource($authsource) {
+    $this->_authsource = $authsource;
+  }
+
+  public function authSource() {
+    return $this->_authsource;
+  }
 	
 	public function dbs() {
 		if (empty($this->_db)) {

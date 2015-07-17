@@ -51,6 +51,10 @@ function r_show_more_options(btn) {
 			<td><input type="password" name="password" style="width:150px"/></td>
 		</tr>
 		<tr>
+			<td><?php hm("authsource"); ?>:</td>
+			<td><input type="text" name="authsource" style="width:150px"/></td>
+		</tr>
+		<tr>
 			<td colspan="2" style="background:#eee"><strong>Non-Admin users:</strong></td>
 		</tr>
 		<tr>
