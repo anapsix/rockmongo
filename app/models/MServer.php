@@ -300,9 +300,9 @@ class MServer {
 				$db = "admin";
 			}
 		}
-    if ($authsource === "") {
-      $authsource = $db;
-    }
+		if ($authsource === "") {
+			$authsource = $db;
+		}
 		$server = null;
 		if ($this->_mongoSock) {//connect through sock
 			$server = $this->_mongoSock;
