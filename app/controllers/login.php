@@ -19,6 +19,7 @@ class LoginController extends BaseController {
 		$password = trim(xn("password"));
 		$this->username = trim(xn("username"));
 		$this->db = trim(xn("db"));
+		$this->authsource = trim(xn("authsource"));
 		$this->hostIndex = xi("host");
 		$this->languages = rock_load_languages();
 		$this->expires = array(
@@ -36,7 +37,7 @@ class LoginController extends BaseController {
 
 			//authenticate
 			$server = MServer::serverWithIndex($this->hostIndex);
-			if (!$server->auth($this->username, $password, $this->db)) {
+			if (!$server->auth($this->username, $password, $this->db, $this->authsource)) {
 				$this->message = rock_lang("can_not_auth");
 				$this->display();
 				return;

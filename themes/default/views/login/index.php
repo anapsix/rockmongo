@@ -51,10 +51,6 @@ function r_show_more_options(btn) {
 			<td><input type="password" name="password" style="width:150px"/></td>
 		</tr>
 		<tr>
-			<td><?php hm("authsource"); ?>:</td>
-			<td><input type="text" name="authsource" style="width:150px"/></td>
-		</tr>
-		<tr>
 			<td colspan="2" style="background:#eee"><strong>Non-Admin users:</strong></td>
 		</tr>
 		<tr>
@@ -65,6 +61,10 @@ function r_show_more_options(btn) {
 			<td colspan="2"><a href="#" onclick="return r_show_more_options(this)" id="more_options_btn">More &raquo;</a></td>
 		</tr>
 		<tbody style="display:none" id="more_options">
+		<tr>
+			<td>Auth DB:</td>
+			<td><input type="text" name="authsource" style="width:150px"/></td>
+		</tr>
 		<tr>
 			<td><?php hm("language"); ?>:</td>
 			<td><select name="lang" style="width:150px">

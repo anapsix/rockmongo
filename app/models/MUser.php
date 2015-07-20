@@ -5,6 +5,7 @@ class MUser {
 	private $_password;
 	private $_hostIndex;
 	private $_db;
+	private $_authsource;
 	private $_timeout;
 	
 	public function __construct() {
@@ -86,7 +87,7 @@ class MUser {
 		if (empty($server)) {
 			return false;
 		}
-		return $server->auth($this->_username, $this->_password, $this->_db);
+		return $server->auth($this->_username, $this->_password, $this->_db, $this->_authsource);
 	}
 	
 	public function servers() {

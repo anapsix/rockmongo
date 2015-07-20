@@ -319,7 +319,7 @@ class MServer {
 				$options["username"] = $username;
 				$options["password"] = $password;
 				$options["db"] = $db;
-				$options["authsource"] = "admin";
+				$options["authsource"] = $authsource;
 			}
 
 			//after 1.2.11 use options to authenticate
