@@ -1,9 +1,3 @@
-WARNING
---------------------------------------
-## Work in progress.. ##
-will work with Mongo 3
-
-
 Introduction
 --------------------------------------
 RockMongo is a MongoDB administration tool, written in PHP 5, very easy to install and use.
@@ -37,6 +31,7 @@ Vladimir Razuvaev <vladimir.razuvaev@gmail.com> Implement features.
 Anton Zering <anton.zering@gmail.com> German translation
 Borda Juan Ignacio <juanignacioborda@gmail.com> Panels Layout
 Diego Baravalle <diegobaravalle@gmail.com> Spanish Translation
+Anastas Dancha <anapsix@random.io> Auth DB option and Docker container
 
 
 Thanks
